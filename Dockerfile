@@ -13,5 +13,5 @@ FROM moussavdb/runtime-java
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 EXPOSE 10301
-COPY --from=build /app/target/authentication-assembly.jar /app
-CMD ["java -jar authentication-assembly.jar"]
+COPY --from=build /app/target/authentication-server-assembly.jar /app
+CMD ["java -jar authentication-server-assembly.jar"]
