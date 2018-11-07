@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t moussavdb/application-authentication:latest -t moussavdb/application-authentication:build_$TRAVIS_BUILD_NUMBER .
+script:
+  - docker images moussavdb/application-authentication
+  
+after_success:
+  - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
+    docker push moussavdb/application-authentication:latest;
+    docker push moussavdb/application-authentication:build_$TRAVIS_BUILD_NUMBER;
