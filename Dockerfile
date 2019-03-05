@@ -7,7 +7,7 @@ FROM moussavdb/build-java as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/authentication /app
-RUN mvn install -s settings.xml
+RUN mvn install -s ../build-resources/settings.xml
 
 FROM moussavdb/runtime-java
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
