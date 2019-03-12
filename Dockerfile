@@ -3,7 +3,7 @@ MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 RUN git clone https://github.com/yildiz-online/authentication.git
 
-FROM moussavdb/build-java as build
+FROM moussavdb/build-java-dependencies as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/authentication /app
